@@ -1,5 +1,6 @@
 package com.hubizict.bootmvc.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,15 @@ public class UserServiceImpl implements UserService {
     public List<Map<String, Object>> getUserList() {
 
         return userMapper.getUserList();
+    }
+
+    @Override
+    public Map<String, Object> getUser(String id) {
+
+        Map<String, Object> param = new HashMap<String, Object>();
+        param.put("ID", id);
+
+        return userMapper.getUser(param);
     }
     
 }

@@ -22,3 +22,17 @@ spring:
 mybatis:
   mapper-locations: mybatis/mapper/*.xml
   config-location: classpath:mybatis/mybatis-config.xml
+
+---
+#logback 설정
+logging:
+  level:
+    root: debug        
+    org:
+      springframework: info
+    jdbc:
+      sqlonly: debug
+      resultsettable: debug
+    com:
+      zaxxer: info
+        

@@ -6,5 +6,6 @@ import java.util.Map;
 public interface UserService {
     
     public List<Map<String, Object>> getUserList();
+    public Map<String, Object> getUser(String id);
 
 }

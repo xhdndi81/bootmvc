@@ -20,6 +20,8 @@ public class MainController {
 
         model.addAttribute("list", userService.getUserList());
 
+        model.addAttribute("user", userService.getUser("id1"));
+
         return "main";
     }
 }

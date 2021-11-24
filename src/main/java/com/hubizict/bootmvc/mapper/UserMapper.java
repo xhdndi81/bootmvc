@@ -12,4 +12,6 @@ public interface UserMapper {
     
     List<Map<String, Object>> getUserList();
 
+    Map<String, Object> getUser(Map<String, Object> param);
+
 }

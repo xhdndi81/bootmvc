@@ -17,5 +17,12 @@
         <p>${item.NAME}</p>
         <p>${item.EMAIL}</p>
     </c:forEach>
+
+    <br>
+
+    <h1>찾은 사용자</h1>
+    <p>${ID}</p>
+    <p>${NAME}</p>
+    <p>${EMAIL}</p>
 </body>
 </html>
