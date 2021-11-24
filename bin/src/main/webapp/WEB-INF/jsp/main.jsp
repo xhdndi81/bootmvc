@@ -7,13 +7,10 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>JSP Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
     <h1>Main Jsp Page 222</h1>
-
-    <c:forEach var="item" items="${list}">
-        <p>${item.name}</p>
-    </c:forEach>
 </body>
 </html>
