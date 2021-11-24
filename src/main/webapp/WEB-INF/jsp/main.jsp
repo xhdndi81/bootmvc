@@ -13,7 +13,9 @@
     <h1>Main Jsp Page 222</h1>
 
     <c:forEach var="item" items="${list}">
-        <p>${item.name}</p>
+        <p>${item.ID}</p>
+        <p>${item.NAME}</p>
+        <p>${item.EMAIL}</p>
     </c:forEach>
 </body>
 </html>
