@@ -36,7 +36,6 @@
             $('#btn').click(function() {
 
                 var jsonObj = JSON.stringify( $('#frm').serializeObject() );
-                console.log(jsonObj);
 
                 $.ajax({
                     type: 'post',
@@ -49,6 +48,33 @@
                     },
                     success: function(res) {
                         console.log('저장완료', res);
+                    }
+                    
+                });
+            });
+
+            $('#btn_del').click(function() {
+
+                $('#frm').attr('action', '/delete').submit();
+            });
+
+            $('#btn_ins').click(function() {
+
+                var jsonObj = JSON.stringify( $('#frm').serializeObject() );
+
+                $.ajax({
+                    type: 'post',
+                    url: '/insert',                    
+                    dataType: 'json',
+                    contentType: 'application/json; charset=UTF-8',
+                    data: jsonObj,
+                    error: function(err) {
+                        alert('저장 중 오류 발생');
+                    },
+                    success: function(res) {
+                        $('#frm').attr('method', 'get')
+                                 .attr('action', '/main')
+                                 .submit();
                     }
                     
                 });
@@ -68,15 +94,20 @@
     <h1>찾은 사용자</h1>
     <p>${user.ID} / ${user.NAME} / ${user.EMAIL}</p>    
 
-    <br>
+    <br>    
 
     <h2>사용자 변경</h2>
     <form id="frm" action="/update" method="post">
-        <input type="text" name="id" value="${user.ID}">
-        <input type="text" name="name" value="${user.NAME}">
-        <input type="text" name="email" id="EMAIL" value="${user.EMAIL}">
+        <input type="text" name="ID" value="${user.ID}">
+        <input type="text" name="NAME" value="${user.NAME}">
+        <input type="text" name="EMAIL" id="EMAIL" value="${user.EMAIL}">
         <Button type="button" id="btn">변경</Button>
     </form>
+
+    <br>
+
+    <Button type="button" id="btn_ins">추가</Button>
+    <Button type="button" id="btn_del">삭제</Button>
 
 </body>
 </html>

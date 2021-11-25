@@ -14,8 +14,8 @@ spring:
 # mybatis, mariadb 설정
 spring:
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/bootmvc?characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mariadb://127.0.0.1:3306/bootmvc?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: hubizict12#    
 
@@ -34,10 +34,14 @@ logging:
         tomcat: info          
         catalina: info
         coyote: info
-        jasper: info
+        jasper: info    
     jdbc:
-      sqlonly: debug
+      sqlonly: warn
+      sqltiming: debug
       resultsettable: debug
+      audit: warn
+      connection: warn
+      resultset: warn
     com:
       zaxxer: info    
      

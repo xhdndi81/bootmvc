@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.RequiredArgsConstructor;
 
@@ -33,10 +34,28 @@ public class MainController {
     @RequestMapping(value="/update", method=RequestMethod.POST)    
     public String update(@RequestBody Map<String, Object> user, Model model) {
         
-        System.out.println("== user :" + user);
+        userService.updateUser(user);
 
         model.addAttribute("user", user);
         
+        return "jsonView";
+    }
+
+    @RequestMapping(value="/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam("ID") String id) {
+
+        System.out.println("== ID :" + id);
+
+        userService.deleteUser(id);
+
+        return "redirect:/main";
+    }
+
+    @RequestMapping(value="/insert", method = RequestMethod.POST)
+    public String insert(@RequestBody Map<String, Object> user) {
+
+        userService.insertUser(user);
+
         return "jsonView";
     }
 }
