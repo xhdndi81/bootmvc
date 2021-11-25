@@ -17,7 +17,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://127.0.0.1:3306/bootmvc?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: hubizict12#
+    password: hubizict12#    
 
 mybatis:
   mapper-locations: mybatis/mapper/*.xml
@@ -26,13 +26,27 @@ mybatis:
 ---
 #logback 설정
 logging:
-  level:
-    root: debug        
+  level:    
+    root: debug
     org:
       springframework: info
+      apache:
+        tomcat: info          
+        catalina: info
+        coyote: info
+        jasper: info
     jdbc:
       sqlonly: debug
       resultsettable: debug
     com:
-      zaxxer: info
-        
+      zaxxer: info    
+     
+---
+logging:
+  level:
+    org:
+      apache:
+        tomcat:
+          util:
+            scan:
+              StandardJarScanner: error        

@@ -1,9 +1,12 @@
 package com.hubizict.bootmvc.controller;
 
+import java.util.Map;
+
 import com.hubizict.bootmvc.service.UserService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -18,10 +21,22 @@ public class MainController {
     @RequestMapping(value="/main", method=RequestMethod.GET)
     public String main(Model model) {
 
+        System.out.println("== main : test");
+
         model.addAttribute("list", userService.getUserList());
 
         model.addAttribute("user", userService.getUser("id1"));
 
         return "main";
+    }
+
+    @RequestMapping(value="/update", method=RequestMethod.POST)    
+    public String update(@RequestBody Map<String, Object> user, Model model) {
+        
+        System.out.println("== user :" + user);
+
+        model.addAttribute("user", user);
+        
+        return "jsonView";
     }
 }

@@ -8,10 +8,12 @@ import com.hubizict.bootmvc.mapper.UserMapper;
 import com.hubizict.bootmvc.service.UserService;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 

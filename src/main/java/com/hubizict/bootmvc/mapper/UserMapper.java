@@ -14,4 +14,6 @@ public interface UserMapper {
 
     Map<String, Object> getUser(Map<String, Object> param);
 
+    void updateUser(Map<String, Object> param);
+
 }
