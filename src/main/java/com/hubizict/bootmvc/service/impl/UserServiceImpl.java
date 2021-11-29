@@ -51,5 +51,17 @@ public class UserServiceImpl implements UserService {
         
         userMapper.insertUser(user);
     }
+
+    @Override
+    public List<Map<String, Object>> getUser(Map<String, Object> param) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void deleteUserRest(Map<String, Object> user) {
+        
+        userMapper.deleteUserRest(user);
+    }
     
 }

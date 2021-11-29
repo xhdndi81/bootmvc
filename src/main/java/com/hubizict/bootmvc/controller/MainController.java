@@ -22,8 +22,6 @@ public class MainController {
     @RequestMapping(value="/main", method=RequestMethod.GET)
     public String main(Model model) {
 
-        System.out.println("== main : test");
-
         model.addAttribute("list", userService.getUserList());
 
         model.addAttribute("user", userService.getUser("id1"));

@@ -3,7 +3,10 @@
 <configuration>
 
     <settings>
+        <!-- 조회 feachSize -->
         <setting name="defaultFetchSize" value="10000" />
+        <!-- 쿼리 조회 결과에 Null 발생시 HashMap에 담기지 않는 증상 해결 -->
+        <setting name="callSettersOnNulls" value="true" />
     </settings>
 
     <typeAliases>

@@ -3,10 +3,20 @@
 
 <mapper namespace="com.hubizict.bootmvc.mapper.UserMapper">
 
+<delete id="deleteUserRest" parameterType="hashMap">
+    /* UserMapper.deleteUserRest : 사용자 정보 삭제 : by 김경식 */
+    DELETE FROM
+        USER
+    WHERE
+        ID = #{ID}
+</delete>
+
 <select id="getUserList" resultType="hashMap">
     /* UserMapper.getUserList: 사용자 전체 조회 : by 김경식 */
     SELECT
-        *
+        ID
+        , NAME
+        , EMAIL
     FROM
         USER
 </select>
@@ -14,7 +24,9 @@
 <select id="getUser" parameterType="hashMap" resultType="hashMap">
     /* UserMapper.getUser: 사용자 조건 검색 : by 김경식 */
     SELECT
-        *
+        ID
+        , NAME
+        , EMAIL
     FROM
         USER
     <where>

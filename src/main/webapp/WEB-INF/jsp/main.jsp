@@ -10,7 +10,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <title>JSP Title</title>    
+    <title>JSP Title</title>
 
     <script>
 
@@ -81,9 +81,10 @@
             });
         });
     </script>
+    
 </head>
 <body>
-    <h1>Main Jsp Page 222</h1>
+    <h1>Main Jsp Page & Use JSTL</h1>
 
     <c:forEach var="item" items="${list}">
         <p>${item.ID} / ${item.NAME} / ${item.EMAIL}</p>        
@@ -108,6 +109,9 @@
 
     <Button type="button" id="btn_ins">추가</Button>
     <Button type="button" id="btn_del">삭제</Button>
+
+    <br>
+    <br>    
 
 </body>
 </html>

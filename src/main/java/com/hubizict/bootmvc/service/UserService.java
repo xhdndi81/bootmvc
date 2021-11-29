@@ -10,5 +10,7 @@ public interface UserService {
     public void updateUser(Map<String, Object> user);
     public void deleteUser(String id);
     public void insertUser(Map<String, Object> user);
+    public List<Map<String, Object>> getUser(Map<String, Object> param);
+    public void deleteUserRest(Map<String, Object> user);
 
 }
