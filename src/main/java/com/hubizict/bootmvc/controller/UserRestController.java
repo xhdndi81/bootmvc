@@ -3,6 +3,7 @@ package com.hubizict.bootmvc.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.hubizict.bootmvc.service.UserService;
 
@@ -58,16 +59,18 @@ public class UserRestController {
     }
 
     @DeleteMapping("/user")
-    @SuppressWarnings("unchecked")
     public void deleteUserData(@RequestParam Map<String, Object> param) {
-
+        
         System.out.println("== param : " + param);
+        System.out.println("== param size : " + param.size());
 
-        List<Map<String, Object>> deleteList = (List<Map<String, Object>>)param.get("deletedRows");
+        // List<Map<String, Object>> deleteList = (List<Map<String, Object>>)param.get("deletedRows");
 
-        for(Map<String, Object> user : deleteList) {
-            userService.deleteUserRest(user); 
-        }
+        // System.out.println("== deleteList : " + deleteList);
+
+        // for(Map<String, Object> user : deleteList) {
+        //     userService.deleteUserRest(user); 
+        // }
 
     }
 

@@ -61,7 +61,8 @@
             });
 
             $('#btn_delRow').click(function() {                
-                grid.removeRow(grid.getFocusedCell().rowKey);                
+                grid.removeRow(grid.getFocusedCell().rowKey);
+                grid.request('deleteData', { url: '/grid/user', method: 'DELETE', withCredentials: true });
             });
 
             $('#btn_addRow').click(function() {
