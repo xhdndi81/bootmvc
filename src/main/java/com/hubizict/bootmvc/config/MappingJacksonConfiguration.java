@@ -1,4 +1,4 @@
-package com.hubizict.bootmvc;
+package com.hubizict.bootmvc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

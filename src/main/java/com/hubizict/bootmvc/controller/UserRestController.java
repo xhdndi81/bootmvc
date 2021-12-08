@@ -3,7 +3,6 @@ package com.hubizict.bootmvc.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import com.hubizict.bootmvc.service.UserService;
 
@@ -45,7 +44,7 @@ public class UserRestController {
     }
 
     @PutMapping("/user")
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked") 
     public void updateUserData(@RequestBody Map<String, Object> param) {
 
         System.out.println("== param : " + param);
